@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="archiver.controller.DashboardController">
+    <stylesheets>
+        <URL value="@css/bootstrapfx.css" />
+        <URL value="@css/styles.css" />
+    </stylesheets>
+    <center>
+        <AnchorPane onKeyTyped="#handleKeyTyped" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="37.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label minWidth="-Infinity" text="Search:" />
+                        <TextField id="tfSearch" fx:id="tfSearch" onAction="#openShownRows" onKeyPressed="#handleTFSearchKeyPress" prefWidth="250.0">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Button id="btnClear" fx:id="btnClear" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearSearchTF" prefHeight="26.0" styleClass="btn-default" text="Clear">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleBtnAddClicked" styleClass="btn-success" text="Add" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                <TableView id="tableArchives" fx:id="tableArchives" styleClass="table-row-cell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                    <columns>
+                        <TableColumn id="colName" fx:id="colName" minWidth="-Infinity" prefWidth="150.0" text="Name" />
+                        <TableColumn id="colPath" fx:id="colPath" minWidth="-Infinity" prefWidth="250.0" text="Path/URL" />
+                        <TableColumn id="colGroup" fx:id="colGroup" minWidth="-Infinity" prefWidth="125.0" text="Group" />
+                        <TableColumn id="colType" fx:id="colType" minWidth="-Infinity" prefWidth="120.0" text="Type" />
+                        <TableColumn id="colActions" fx:id="colActions" minWidth="-1.0" prefWidth="95.0" sortable="false" text="Action" />
+                    </columns>
+                </TableView>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="30.0" right="30.0" top="5.0" />
+            </padding>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" styleClass="h2" text="My Bookmarks" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                    <font>
+                        <Font name="System Bold Italic" size="25.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>
